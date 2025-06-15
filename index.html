@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pixel Forge - We build stunning websites and apps that drive business growth.">
+    <title>Pixel Forge | Web & App Development Agency</title>
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="css/footer-and-back-to-top.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Inline CSS for critical responsiveness -->
+    <style>
+        /* Mobile-first base styles */
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Mobile navigation adjustments */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                padding: 1rem 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .split-section {
+                flex-direction: column;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--darker);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo2.png" alt="Pixel Forge Logo" width="360" height="120" loading="eager"
+                    style="filter: drop-shadow(0 4px 16px rgba(67,97,238,0.25)); transition: transform 0.3s; will-change: transform; display: block; max-width: 100%;"
+                    onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Work</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#process" class="nav-link"><i class="fas fa-project-diagram"></i> Process</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#contact" class="cta-button nav-cta"><i class="fas fa-rocket"></i> Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" style="z-index: 111;">
+                <h1 class="hero-title">Crafting Digital Experiences That Drive Growth</h1>
+                <p class="hero-subtitle">We design and develop high-performance websites and apps that help businesses
+                    thrive in the digital landscape.</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="cta-button primary">View Our Work</a>
+                    <a href="#contact" class="cta-button secondary">Get Free Consultation</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="badge">
+                        <i class="fas fa-medal"></i>
+                        <span>5+ Years Experience</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>120+ Projects Delivered</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero2.webp" style="filter: brightness(0.8); z-index: 111;" alt="Digital team collaborating"
+                    width="800" height="600" loading="eager">
+                <div class="floating-shapes">
+                    <div class="shape circle"></div>
+                    <div class="shape triangle"></div>
+                    <div class="shape square"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <p class="section-subtitle">Trusted by innovative companies worldwide</p>
+            <div class="client-logos">
+                <img src="assets/images/client-1.svg" alt="TechCorp" width="120" height="40" loading="lazy">
+                <img src="assets/images/client-2.svg" alt="DigitalWave" width="120" height="40" loading="lazy">
+                <img src="assets/images/client-3.svg" alt="Innovate" width="120" height="40" loading="lazy">
+                <img src="assets/images/client-4.svg" alt="Nexus" width="120" height="40" loading="lazy">
+                <img src="assets/images/client-5.svg" alt="Vertex" width="120" height="40" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">Explore our recent work that helped clients achieve their business goals
+                </p>
+            </div>
+            <div class="grid portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="ecommport.jpeg" alt="E-commerce Platform" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>E-commerce Platform</h3>
+                        <p>Modern online marketplace with AI-powered recommendations</p>
+                        <div class="portfolio-tags">
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="fitnes.jpg" alt="Fitness Mobile App" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Health & Fitness App</h3>
+                        <p>iOS/Android app with workout tracking and meal planning</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="reales.jpg" alt="Corporate Website" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Real Estate Platform</h3>
+                        <p>Property listing and management system with virtual tours</p>
+                        <div class="portfolio-tags">
+                            <span>Vue.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="syst.jpg" alt="Corporate Website" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Learning Management System</h3>
+                        <p>Educational platform with live classes and course management</p>
+                        <div class="portfolio-tags">
+                            <span>Angular</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="resturant.jpeg" alt="Corporate Website" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="https://halochow.vercel.app/" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Restaurant Management</h3>
+                        <p>POS system with inventory and online ordering features</p>
+                        <div class="portfolio-tags">
+                            <span>frontend</span>
+                            <span>Javascript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="corp.jpeg" alt="Corporate Website" loading="lazy" width="600" height="400">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3>Travel Booking App</h3>
+                        <p>Full-featured travel platform with AI trip planning</p>
+                        <div class="portfolio-tags">
+                            <span>Next.js</span>
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="section-cta">
+                    <a href="#" class="cta-button outline">View All Projects</a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <header class="services-header">
+                <p class="services-subtitle">What We Offer</p>
+                <h2 class="services-title">Our Services</h2>
+                <p class="services-intro">Comprehensive digital solutions tailored to your business needs</p>
+            </header>
+
+            <div class="services-grid">
+                <!-- Web Development -->
+                <article class="service-card web-dev">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Web Development</h3>
+                    <p class="service-card__description">Build responsive, high-performance websites with modern
+                        frameworks and technologies.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">HTML5/CSS3/JavaScript</li>
+                        <li class="service-card__feature">React.js & Next.js</li>
+                        <li class="service-card__feature">Node.js Backend</li>
+                        <li class="service-card__feature">E-commerce Solutions</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="web-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="web-details" class="service-card__details" hidden>
+                        <p>Our web development service covers everything from simple static websites to complex web
+                            applications. We specialize in:</p>
+                        <ul>
+                            <li>Custom website development with responsive design</li>
+                            <li>Single Page Applications (SPAs) using React/Vue</li>
+                            <li>Server-side rendering with Next.js/Nuxt.js</li>
+                            <li>Database integration and API development</li>
+                            <li>E-commerce solutions with secure payment gateways</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Mobile App Development -->
+                <article class="service-card mobile-dev">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Mobile App Development</h3>
+                    <p class="service-card__description">Cross-platform mobile applications for iOS and Android with
+                        native performance.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">React Native Development</li>
+                        <li class="service-card__feature">Flutter Applications</li>
+                        <li class="service-card__feature">App Store Deployment</li>
+                        <li class="service-card__feature">Push Notifications</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="mobile-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="mobile-details" class="service-card__details" hidden>
+                        <p>We build high-quality mobile apps that work seamlessly across platforms:</p>
+                        <ul>
+                            <li>Native-like performance with React Native/Flutter</li>
+                            <li>Offline functionality and data synchronization</li>
+                            <li>Integration with device features (camera, GPS, etc.)</li>
+                            <li>App store optimization and submission</li>
+                            <li>Ongoing maintenance and updates</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- UI/UX Design -->
+                <article class="service-card uiux">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">UI/UX Design</h3>
+                    <p class="service-card__description">Create intuitive, user-friendly interfaces with exceptional
+                        user experiences.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">Wireframing & Prototyping</li>
+                        <li class="service-card__feature">User Flow Design</li>
+                        <li class="service-card__feature">Interactive Mockups</li>
+                        <li class="service-card__feature">Usability Testing</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="uiux-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="uiux-details" class="service-card__details" hidden>
+                        <p>Our UI/UX design process focuses on creating delightful user experiences:</p>
+                        <ul>
+                            <li>User research and persona development</li>
+                            <li>Information architecture and navigation design</li>
+                            <li>High-fidelity prototypes with Figma/Adobe XD</li>
+                            <li>Accessibility compliance (WCAG standards)</li>
+                            <li>Design system creation for consistency</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Graphics Design -->
+                <article class="service-card graphics">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 12h2v5H7zm8-5h2v10h-2zm-4 7h2v3h-2zm0-4h2v2h-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Graphics Design</h3>
+                    <p class="service-card__description">Eye-catching visual designs for branding, marketing, and
+                        digital products.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">Logo & Brand Identity</li>
+                        <li class="service-card__feature">Digital Illustrations</li>
+                        <li class="service-card__feature">Marketing Materials</li>
+                        <li class="service-card__feature">Social Media Graphics</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="graphics-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="graphics-details" class="service-card__details" hidden>
+                        <p>Our graphic design services help establish your visual identity:</p>
+                        <ul>
+                            <li>Complete brand identity packages</li>
+                            <li>Print and digital marketing collateral</li>
+                            <li>Infographics and data visualization</li>
+                            <li>Custom illustrations and icon sets</li>
+                            <li>Social media templates and banners</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Debugging & Maintenance -->
+                <article class="service-card debug">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Debugging & Maintenance</h3>
+                    <p class="service-card__description">Identify and fix issues while ensuring your applications run
+                        smoothly.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">Error Diagnosis</li>
+                        <li class="service-card__feature">Performance Optimization</li>
+                        <li class="service-card__feature">Security Patches</li>
+                        <li class="service-card__feature">Code Refactoring</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="debug-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="debug-details" class="service-card__details" hidden>
+                        <p>We provide comprehensive debugging and maintenance services:</p>
+                        <ul>
+                            <li>Code review and quality assessment</li>
+                            <li>Performance benchmarking and optimization</li>
+                            <li>Security vulnerability scanning</li>
+                            <li>Legacy code modernization</li>
+                            <li>Ongoing support and monitoring</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Cloud & DevOps -->
+                <article class="service-card cloud">
+                    <div class="service-card__icon">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Cloud & DevOps</h3>
+                    <p class="service-card__description">Deploy and manage your applications with reliable cloud
+                        infrastructure.</p>
+                    <ul class="service-card__features">
+                        <li class="service-card__feature">AWS/Google Cloud Setup</li>
+                        <li class="service-card__feature">CI/CD Pipelines</li>
+                        <li class="service-card__feature">Docker & Kubernetes</li>
+                        <li class="service-card__feature">Server Management</li>
+                    </ul>
+                    <button class="service-card__cta" aria-expanded="false" aria-controls="cloud-details">
+                        Learn More
+                        <svg class="cta-icon" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </button>
+                    <div id="cloud-details" class="service-card__details" hidden>
+                        <p>Our cloud and DevOps services streamline your deployment process:</p>
+                        <ul>
+                            <li>Cloud architecture design and implementation</li>
+                            <li>Automated testing and deployment pipelines</li>
+                            <li>Containerization and orchestration</li>
+                            <li>Infrastructure as code (Terraform)</li>
+                            <li>24/7 monitoring and alerting</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Methodology</span>
+                <h2 class="section-title">Development Process</h2>
+                <p class="section-description">A structured approach that ensures quality and efficiency</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We analyze your requirements, target audience, and business objectives.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>Creating detailed project specifications and development roadmap.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Design</h3>
+                        <p>Crafting intuitive user interfaces and seamless user experiences.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Development</h3>
+                        <p>Building robust digital products with clean, maintainable code.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Testing</h3>
+                        <p>Rigorous quality assurance to ensure flawless performance.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3>Launch</h3>
+                        <p>Deployment and post-launch support for smooth operation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats bg-dark">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="45">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Client Retention</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Feedback</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">Hear from businesses we've helped transform digitally</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Pixel Forge transformed our online presence completely. Their team delivered a website that
+                            not only looks stunning but has increased our conversions by 40%."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/client-sarah.webp" alt="Sarah Johnson" loading="lazy" width="80"
+                            height="80">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CEO, TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The mobile app developed by Pixel Forge exceeded our expectations. User engagement has
+                            doubled since launch, and the code quality is exceptional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/client-david.webp" alt="David Miller" loading="lazy" width="80"
+                            height="80">
+                        <div class="author-info">
+                            <h4>David Miller</h4>
+                            <span>Founder, FitTrack</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Working with Pixel Forge was a game-changer for our e-commerce business. Their attention to
+                            detail and technical expertise is unmatched in the industry."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/client-maria.webp" alt="Maria Chen" loading="lazy" width="80"
+                            height="80">
+                        <div class="author-info">
+                            <h4>Maria Chen</h4>
+                            <span>Marketing Director, NovaShop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Experts</span>
+                <h2 class="section-title">Meet The Team</h2>
+                <p class="section-description">The talented professionals behind our success</p>
+            </div>
+            <div class="grid team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="dabo.jpg" alt="dabo" loading="lazy" width="300" height="300">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dabo Johnson</h3>
+                        <span>Lead Developer</span>
+                        <p>Full-stack developer with 8+ years experience in modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="memb2.jpg" alt="Jane Smith" loading="lazy" width="300" height="300">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>David Okonkwo</h3>
+                        <span>Front End Developer</span>
+                        <p>Creative designer focused on Front-end design and brand identity.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="memb1.jpg" alt="henry ejiofor" loading="lazy" width="300" height="300">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-product-hunt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Henry Ejiofor </h3>
+                        <span>Project Manager</span>
+                        <p>Agile certified PM with expertise in digital product development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="split-section">
+                <div class="about-content">
+                    <span class="section-subtitle">Our Story</span>
+                    <h2 class="section-title">About Pixel Forge</h2>
+                    <p>Founded in 2018, Pixel Forge began as a small team of passionate developers and designers with a
+                        shared vision: to create digital experiences that make an impact.</p>
+                    <p>Today, we've grown into a full-service digital agency serving clients across multiple industries,
+                        but our commitment to quality and innovation remains unchanged.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-bullseye"></i>
+                            <div>
+                                <h4>Our Mission</h4>
+                                <p>To empower businesses through exceptional digital solutions that drive growth and
+                                    engagement.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <h4>Our Vision</h4>
+                                <p>To be recognized as the most trusted partner for digital transformation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="Small_Office.jpg" alt="Our office" loading="lazy" width="600" height="600">
+                    <div class="experience-badge">
+                        <span>5+</span>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section bg-primary">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Digital Presence?</h2>
+                <p>Let's discuss how we can help you achieve your business goals with a custom digital solution.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button white">Get Free Consultation</a>
+                <a href="tel:+11234567890" class="cta-button outline-white">
+                    <i class="fas fa-phone-alt"></i> Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">Have a project in mind or questions about our services? We'd love to hear
+                    from you.</p>
+            </div>
+            <div class="split-section">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Us</h4>
+                            <a href="mailto:hello@pixelforge.com">hello@pixelforge.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call Us</h4>
+                            <a href="tel:+11234567890">+1 (123) 456-7890</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Visit Us</h4>
+                            <address>123 Tech Street, Silicon Valley, CA 94025</address>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div c[l]ass="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-darker">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <div class="footer-logo">
+                        <img src="logo2.png" alt="Pixel Forge" width="280px" height="150px" loading="lazy">
+                    </div>
+                    <p class="footer-about">We design and develop digital experiences that help businesses grow and
+                        thrive in the modern landscape.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">E-commerce Solutions</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="cta-button small">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year">2023</span> Pixel Forge. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+</body>
+<script src="func.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+</html>
